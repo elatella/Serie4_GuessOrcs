@@ -10,6 +10,7 @@ public class GuessOrc {
 
     // Store the orc chieftain position.
     private int mineShaftId;
+  
 
     // Amount of attempts we get to stop the orcs.
     // Use 'MAX_ATTEMPTS'' instead of coding a number
@@ -63,7 +64,7 @@ public class GuessOrc {
         // Your code goes here; 
         //create helpTextId to feed into printMap 
     //switch creates Array of Strings, then random method to print one of them?
-    //System.out.println ("Your Seismometer tells you that the orcs are " +HINTS);   
+    
       ArrayList<Integer> possibleHints = new ArrayList<Integer>();
     
     //create numbers for switch statement to identify different cases
@@ -91,16 +92,7 @@ public class GuessOrc {
         {i=4;
         possibleHints.add (4);}
     
-    System.out.println(possibleHints);
-    /*int hintSize = possibleHints.size();
-    int helpTextIdNum = new Random().nextInt(hintSize);
     
-    
-    int helpTextIdNum = new Random().nextInt(possibleHints.size());
-    System.out.println(helpTextIdNum);
-    int helpTextId = possibleHints.get(helpTextIdNum);
-    System.out.println(helpTextId);
-    return helpTextId;*/
     
     Random randomGenerator = new Random();
     int index = randomGenerator.nextInt(possibleHints.size());
@@ -169,13 +161,11 @@ public class GuessOrc {
                 guessedMineShaft = Character.toLowerCase(guessedMineShaft);
                 //converting guessed mineShaft into Int using helper methode for better comparing 
                 int column = getColumnAsInt (guessedMineShaft);
-                //System.out.println(column);
+               
                 //int currentGuess = movesMade();
                 int helpTextId = calculateHint(column);
-                //System.out.println(helpTextId);
-            
-                System.out.println(mineShaftId);
-                //int column;
+                
+                
                 printMap(column, helpTextId);
            
                 
@@ -217,7 +207,7 @@ public class GuessOrc {
             //feeds the mineShaft Char to the resolution
             char mineShaft;
             mineShaft = getMineShaftAsChar (mineShaftId);
-            //System.out.println(mineShaft);
+           
             //in case you need more than 6 moves, might already be defined later...
             
             if (movesMade() == MAX_ATTEMPTS){
